@@ -1,7 +1,13 @@
 node_modules/
 .env
-node_modules/
-.env
 .env.*
 !.env.example
 npm-debug.log*
+*.tar
+trivy-report.json
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/backup/
+
+terraform/*.tfplan
