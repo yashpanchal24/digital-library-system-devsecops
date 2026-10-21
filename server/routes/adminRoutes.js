@@ -1,0 +1,2 @@
+const router=require('express').Router(); const c=require('../controllers/adminController'); const auth=require('../middleware/auth'); const role=require('../middleware/role');
+router.use(auth,role('ADMIN')); router.get('/dashboard',c.dashboard); router.get('/students',c.students); router.get('/requests',c.requests); router.put('/requests/:id/approve',c.approve); router.put('/requests/:id/reject',c.reject); router.get('/history',c.history); module.exports=router;

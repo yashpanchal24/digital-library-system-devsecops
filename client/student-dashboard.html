@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header class="top">
+
+    <b>📚 Digital Library</b>
+
+    <nav>
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/books.html">Books</a>
+      <a href="/my-books.html">My Books</a>
+      <a href="/history.html">History</a>
+
+      <!-- LOGOUT -->
+      <button type="button" id="logout" class="linkbtn">
+        Logout
+      </button>
+    </nav>
+
+  </header>
+
+
+  <main class="container">
+
+    <h1>Student Dashboard</h1>
+
+    <p id="welcome" class="muted"></p>
+
+    <div class="grid" id="stats"></div>
+
+    <div class="card">
+
+      <h2>Quick actions</h2>
+
+      <a class="btn" href="/books.html">
+        Browse Books
+      </a>
+
+      <a class="btn secondary" href="/my-books.html">
+        My Borrowings
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- Logout -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const logoutButton = document.getElementById("logout");
+
+      if (logoutButton) {
+
+        logoutButton.addEventListener("click", function () {
+
+          // Remove login information
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+
+          // Redirect to login page
+          window.location.href = "/login.html";
+
+        });
+
+      }
+
+    });
+  </script>
+
+
+  <!-- Student dashboard functions -->
+  <script src="/js/student.js"></script>
+
+</body>
+
+</html>

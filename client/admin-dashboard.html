@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header class="top">
+
+    <b>📚 Library Admin</b>
+
+    <nav>
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/manage-books.html">Books</a>
+      <a href="/manage-requests.html">Requests</a>
+      <a href="/students.html">Students</a>
+
+      <!-- Logout -->
+      <button type="button" id="logout" class="linkbtn">
+        Logout
+      </button>
+    </nav>
+
+  </header>
+
+
+  <main class="container">
+
+    <h1>Admin Dashboard</h1>
+
+    <div id="stats" class="grid"></div>
+
+    <div class="card">
+
+      <h2>Manage Library</h2>
+
+      <a class="btn" href="/manage-books.html">
+        Manage Books
+      </a>
+
+      <a class="btn secondary" href="/manage-requests.html">
+        Manage Requests
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- Admin Logout -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const logoutButton = document.getElementById("logout");
+
+      if (logoutButton) {
+
+        logoutButton.addEventListener("click", function () {
+
+          // Clear login information
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+
+          // Redirect to admin login
+          window.location.href = "/admin-login.html";
+
+        });
+
+      }
+
+    });
+  </script>
+
+
+  <!-- Admin dashboard functions -->
+  <script src="/js/admin.js"></script>
+
+</body>
+
+</html>
